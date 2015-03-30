@@ -1,0 +1,227 @@
+---
+layout: oVirtMoM
+title: "oVirt testing"
+date: 2015-03-12 18:08
+---
+   <!--第一个导航栏-->
+   <nav class="navbar navbar-inverse"><!-- navbar-fixed-top" 如果设置了navbar-fixed-top，就会覆盖第一个导航栏-->
+      <div class="container">
+         <a href="#" class="navbar-brand"><strong>前语</strong></a>
+         <ul class="nav navbar-nav">
+            <li><a href="">vm_evenly_distributed</a></li>   
+            <li><a href="">evenly_distributed</a></li>
+            <li><a href="">power_saving</a></li>
+            <li><a href="">optaplanner</a></li>
+            <li><a href="">optimization</a></li>
+         </ul>
+      </div>
+   </nav>
+   <p class="alert alert-info">
+      用户可以在添加主机窗口中指定被输入的 Gluster 集群中的主机信息。当您在新建集群窗口中选择了启用
+      Gluster 服务选项并输入了相应的主机信息后，这个窗口将会被显示。
+   </p>
+   <!--第二个导航栏-->
+   <div class="container">
+      <nav class="navbar navbar-default equinav" role="navigation">
+         <a href="#" class="navbar-brand">
+            <strong>ovirt-china</strong>.cn
+         </a>
+      
+         <ul class="nav navbar-nav">
+            <li class="active"><a href="#">课程</a></li>
+            <li><a href="#">博客</a></li>
+            <li class="dropdown" role="presentation">
+               <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                  线下活动
+                  <b class="caret"></b>
+               </a>
+               <ul class="dropdown-menu">
+                  <li><a href="#">文档</a></li>
+                  <li><a href="#">项目</a></li>
+                  <li><a href="www.baidu.com">百度</a></li>
+               </ul>
+            </li>
+         </ul>      
+      </nav>
+   </div>
+   <p class="alert alert-info">
+      在您提供了集群中的任何主机的相关信息（如 IP 地址，主机名和密码）后，gluster peer status 命令
+      会通过 SSH 在主机上运行，并显示集群上的主机列表。您需要手工验证每个主机的指纹信息并为它们提供密
+      码。当集群中的某个主机已经被关闭，或因一些原因无法访问，您将无法导入这个集群。因为新导入的主机没
+      有安装 VDSM，bootstrap 脚本会在主机被导入后为它们安装 VDSM 软件包，并重新启动这些主机。
+   </p>
+
+   <!---------------------------------------------------------------------------------------------------------------->
+
+   <!--网格-->
+   <!--预知 push 和 offset 的区别，请见：http://www.bootply.com/126557-->
+   <!--如果想在lg的时候显示区块2，3；不显示区块1应该怎么做呢？-->
+   <div class="container">
+      <div class="row">
+         <!--div class="col-lg-1 col-md-3 col-sm-10 col-xs-5 col-lg-push-11 col-md-push-9 col-sm-push-2"--><!--pull：向左移*个位置-->
+         <div class="col-lg-1 col-md-3 col-sm-10 col-xs-5"><!--pull：向左移*个位置-->
+            <h2 class="page-header">目录</h2>
+            <p class="visible-xs alert alert-info">
+            在linux下，虚拟机的选择方式有很多，比如vmware for linux，virtual box，还有qemu，在以前，使用qemu的人不多，主要是使用起来有些麻烦，但现在随着Openstack的兴起，qemu也得到了很大的发展，现在在Fedora下使用qemu＋kvm性能还是很好的，如果再加上spice，就更不错了。但今天还是主要讲讲qemu下使用的几种镜像格式吧！
+            </p>
+         </div>
+         <!--div class="col-lg-11 col-md-9 col-sm-2 col-xs-3 col-lg-pull-1 col-md-pull-3 col-sm-pull-10"--><!--push：向右移*个位置-->
+         <div class="col-lg-11 col-md-9 col-sm-2 col-xs-7">
+            <h2 class="page-header">内容</h2>
+            <div class="col-lg-3 col-md-6 col-sm-5 col-xs-0">
+               <p class="hidden-lg">
+                  MOM is a policy-driven tool that can be used to manage overcommitment on KVM 
+               hosts. Using a connection to the hypervisor software (either libvirt or oVirt 
+               use by the policy evaluation engine. If configured, MOM regularly evaluates a 
+               </p>
+            </div>
+            <div class="col-lg-6 col-md-4 col-sm-5 col-xs-6">
+               <p class="alert alert-info">
+                  LUN masking是指LUN与主机HBA卡的WWN地址绑定，与主机HBA卡建立一对一或多对一的连接和访问关系。无论主机跳线到同一个FABRIC（无 zone设置)的哪一个端口上，主机都能识别到相同的LUN。存储设备一般默认在卷和主机间建立多对一的对应关系，即一台主机可访问存储设备上的多个卷。 
+               </p>
+            </div>
+            <div class="col-lg-3 col-md-2 col-sm-2 col-xs-2"><!--区块3-->
+               <p>
+               关于 RAID 呢，就像上面的故事说的一样，是将多个磁盘，通过某种技术和方式组     合在一起，提高数据的读写性能 及数据的安全，备份等等功能。然后这些多个     磁盘组合在一起的阵列，通过RAID总线连接到主板上的一个RAID控制器，该控制     器通过控制管理RAID设备中的数据读去与写入，这样降低了CPU处理数据的负       载，从而提高了数据的读写性能。
+               </p>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-lg-333 col-md-offset-2 col-xs-3"><!--区块4--><!--如果区块1，2的内容比较多，区块4和区块5就会被挡住。想要让4，5在下一行的开头显示（不被挡住，就要加上 clearfix）-->
+               <h3 class="page-header">
+                  additional four
+               </h3>
+               <p class="alert alert-info">
+                  LUN的全称是Logical Unit Number，也就是逻辑单元号，是SCSI中的概念。 我们用Target ID(也有称为SCSI ID的)来描述这些设备，设备只要一加入系统，就有一个代号，我们在区别设备的时候,只要说几号几号就ok了。 早期的SCSI系统采用3个ID，一个SCSI总线上只能接驳8个设备，除了SCSI控制卡占用了一个ID外，只剩7个设备号可用。尽管SCSI以后采用了4位ID，扩展到了16个设备，但对于现代的存储设备，这种个位数的ID识别号显然不够用。目前生产环境上多产用RAID技术来规划存储，通过RAID组合后的磁盘不再能看到单独的磁盘信息，而是变成了一个巨大的存储空间。古老的RAID技术只能将此存储空间整体分配，被指定了一个LUN后，成为了一个“逻辑”磁盘，供接驳的计算机使用。
+               </p>
+            </div>
+            <div class="col-lg-5 col-md-push-2 col-xs-3"><!--区块5-->
+               <h3 class="page-header">additional five</h3>
+               <p class="alert alert-info">
+                  LUN是对存储设备而言的，volume是对主机而言的。
+                  怎么去理解呢？
+                  选择存储设备上的多个硬盘形成一个RAID组，再在RAID组的基础上创建一个或多个LUN（一般创建一个LUN）。许多厂商的存储设备只支持一个RAID组上创一个LUN。此时LUN相对于存储设备是一个逻辑设备。
+                  当网络中的主机连接到存储设备时，就可以识别到存储设备上逻辑设备LUN，此时LUN相对于主机来讲就是一个“物理硬盘”，与C盘D盘所在IDC或SCSI硬盘的性属是相同的。在该“物理硬盘”上创建一个或多个分区，再创建文件系统，才可以得到一个VOLUM。此时VOLUME相对于主机是一个逻辑设备。
+               </p>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   
+   <!---------------------------------------------------------------------------------------------------------------->
+   <!--下拉菜单-->   
+   <div class="container">
+      <div class="row">
+         <h2>BootStrap 多级下拉菜单</h2>
+         <hr>
+            <div class="dropdown">
+               <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="javascript:;">
+                  下拉多级菜单
+                  <span class="caret"></span>
+               </a>
+               <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                  <li><a href="javascript:;">1</a></li>
+                  <li><a href="javascript:;">1</a></li>
+                  
+               </ul>
+            </div>
+         </hr>
+      </div>
+   </div>
+   
+   <!---------------------------------------------------------------------------------------------------------------->
+
+<!--旋转木马   
+<div class="container">   
+   <div class="carousel slide" data-ride="carousel" id="slideshow">
+      <div class="carousel-indicators">
+         <li data-target="#slideshow" data-slide-to="0" class="active"></li>
+         <li data-target="#slideshow" data-slide-to="1"></li>
+         <li data-target="#slideshow" data-slide-to="2"></li>
+      </div>
+      <div class="carousel-inner">
+         <div class="item active"><img src="holder.js/1200x500/auto/text:oVirt" alt=""></div>
+         <div class="item"><img src="holder.js/1200x500/auto/text:openStack" alt=""></div>
+         <div class="item"><img src="holder.js/1200x500/auto/text:Cloud" alt=""></div>
+      </div>
+      <a href="#slideshow" data-slide="prev" class="left carousel-control">
+         <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a href="#slideshow" data-slide="next" class="right carousel-control">
+         <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+   </div>
+</div>
+-->
+<!--=====================================================================================================-->
+
+<!--旋转木马-->   
+<div class="container">   
+   <div class="carousel slide" data-ride="carousel" id="slideshow0">
+      <div class="carousel-indicators">
+         <li data-target="#slideshow0" data-slide-to="0" class="active"></li>
+         <li data-target="#slideshow0" data-slide-to="1"></li>
+         <li data-target="#slideshow0" data-slide-to="2"></li>
+      </div>
+      <div class="carousel-inner">
+         <div class="item active">
+            <img src="/folders/myPic/a.jpg" alt="">
+            <div class="carousel-caption">
+               <h2>OpenCloud</h2>
+            </div>
+         </div>
+         <div class="item">
+            <img src="/folders/myPic/b.jpg" alt="">
+            <div class="carousel-caption">
+               <h2>we selected</h2>
+            </div>
+         </div>
+         <!--div class="item"><img src="holder.js/1200x500/auto/text:Cloud" alt=""></div-->
+      </div>
+      <a href="#slideshow0" data-slide="prev" class="left carousel-control">
+         <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a href="#slideshow0" data-slide="next" class="right carousel-control">
+         <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+   </div>
+   <!--
+   <div class="text-center" style="padding: 20px;">
+      <div class="btn-group">
+         <button class="btn-btn-default prev-slide">
+            <span class="glyphicon glyphicon-backward"></span>
+         </button>
+         <button class="btn-btn-default play-and-stop">
+            <span class="glyphicon glyphicon-play"></span>
+         </button>
+         <button class="btn-btn-default next-slide">
+            <span class="glyphicon glyphicon-forward"></span>
+         </button>
+      </div>
+   </div>
+   -->
+</div>
+
+
+   <div class="container">
+   <p id="p1" class="alert alert-info">
+      虚拟化的一个重要优势是能将多个工作负载整合到一个计算机系统中。这样的整合能够节省电力消耗、成本支出和管理费用。节约的程度取决于超量使用 硬件资源，如内存、CPU 周期、I/O 和网络带宽。一些诸如内存膨胀和 Kernel Same-page Merging (KSM) 的技术能够通过适当的手工调整来提升内存超量使用量。 这些控制根据主机和 VM 条件进行自动重调能带来更大的节约。本文中，您将学习如何应用这些技术来提高成本节约。
+   </p>   
+   </div>
+   <div class="container">
+      <div class="row">
+         <div class="col-xs-3">
+            <h3 class="page-header">目录</h3>
+         </div>
+         <div class="col-xs-9">
+            <h3 class="page-header">管理过度使用的 KVM 主机上的资源</h3>
+         </div>
+      </div>
+   </div>
+   </br>
+   </br>
+   </br>
+   <p>
+      a<br/>b<br/>c<br/>d</br>
+   </p>
+   </br>
