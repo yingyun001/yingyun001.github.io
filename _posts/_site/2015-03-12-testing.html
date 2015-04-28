@@ -1,20 +1,7 @@
----
-layout: oVirt
-title: "oVirt testing"
-date: 2015-03-12 18:08
----
-   <!--第一个导航栏;有折叠功能--><!--navbar-static-top 导航栏会跟着页面的滚动而滚动。-->
-   <nav class="navbar navbar-inverse navbar-fixed-top"><!-- navbar-fixed-top 导航栏不会跟随页面的滚动而滚动 -->
+   <!--第一个导航栏-->
+   <nav class="navbar navbar-inverse navbar-fixed-top"><!-- navbar-fixed-top" 如果设置了navbar-fixed-top，就会覆盖第一个导航栏-->
       <div class="container">
-         <div class="navbar-header">
-            <button class="navbar-toggle" data-toggle="collapse" data-target="#responsive-navbar">
-               <span class="icon-bar"></span>
-               <span class="icon-bar"></span>
-               <span class="icon-bar"></span>
-            </button><!--data-toggle:开启按钮的切换显示折叠内容的功能;data-target:指定了要切换显示的内容-->
-            <a href="#" class="navbar-brand"><strong>前语</strong></a>
-         </div>
-         <div class="collapse navbar-collapse" id="responsive-navbar">
+         <a href="#" class="navbar-brand"><strong>前语</strong></a>
          <ul class="nav navbar-nav">
             <li><a href="">vm_evenly_distributed</a></li>   
             <li><a href="">evenly_distributed</a></li>
@@ -22,24 +9,6 @@ date: 2015-03-12 18:08
             <li><a href="">optaplanner</a></li>
             <li><a href="">optimization</a></li>
          </ul>
-         <form action="" class="navbar-form navbar-left"><!--浮动-->
-            <input type="text" placeholders="搜索" class="form-control"/><!--from-control 这个类可以为元素添加一些额外的样式-->
-            <button type="submit">
-               <span class="glyphicon glyphicon-search"></span><!--小图标-->
-            </button>
-         </form>
-         <a href="#" class="btn btn-primary btn-sm navbar-btn navbar-right hidden-xs"><!--btn 定义了按钮的基本样式；btn-primary 决定了按钮样式的类；navbar-btn 在按钮的周围添加合适的边距；navbar-right 靠右显示-->
-            按钮链接
-         </a>
-         <div class="profile navbar-right">
-            <ul class="nav navbar-nav">
-               <li><a href="" data-toggle="modal" data-target="#login-modal">登录</a></li><!--data-toggle="modal"的意思是：可以切>换显示对话框;data-target="#login-modal" 的意思是：想要切换显示的对象的 id-->
-               <li><a href="">注册</a></li>
-            </ul>
-            <p class="navbar-text">
-               您好<a href="#" class="navbar-link">亚琪</a><!--navbar-link 改变链接在导航栏里面的颜色-->
-            </p>
-         <div>
       </div>
    </nav>
    <p class="alert alert-info">
@@ -217,47 +186,7 @@ date: 2015-03-12 18:08
       </div>
    </div>
 
-   <!---------------------------------------------------------------------------------------------------------------->
-   <!--对话框 modal 组件-->
-   <!-- 
-   <div class="modal in" style="display: block"><!--in 是为了让对话框显示在页面上-->
-   -->   
-   <div class="modal fade" id="login-modal" tabindex="-1" data-backdrop="false"><!--如何打开关闭对话框-->
-      <div class="modal-dialog"><!--modal-sm-->
-         <div class="modal-content"><!--定义了对话框背景，阴影，圆角的效果-->
-            <!--
-            <div class="modal-header">
-               <button class="close" data-dismiss="modal">&times;</button>
-               <h4>用户登录</h4>
-            </div>
-            <div class="modal-body">
-               <p>用户登录的表单</p>
-            </div>
-            <div class="modal-footer">
-               <button class="btn btn-primary">
-                  登录
-               </button>
-            </div>
-            -->
-            
-            <script>
-               $(function() {
-                    $('#login-modal').modal({
-                        show: false,
-                        backdrop: false,
-                        remote: 'login-form.html'
-                    });
-                 });
-            </script>
-
-         </div>
-      </div>
-   </div>
-   <!--下面 div 的作用是：在对话框的周围显示出暗色的半透明的效果
-   <div class="modal-backdrop in"></div>
-   -->
    
-  
    <!---------------------------------------------------------------------------------------------------------------->
    <!--下拉菜单-->   
    <div class="container">
