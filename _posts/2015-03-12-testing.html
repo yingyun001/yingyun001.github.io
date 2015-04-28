@@ -4,7 +4,7 @@ title: "oVirt testing"
 date: 2015-03-12 18:08
 ---
    <!--第一个导航栏-->
-   <nav class="navbar navbar-inverse"><!-- navbar-fixed-top" 如果设置了navbar-fixed-top，就会覆盖第一个导航栏-->
+   <nav class="navbar navbar-inverse navbar-fixed-top"><!-- navbar-fixed-top" 如果设置了navbar-fixed-top，就会覆盖第一个导航栏-->
       <div class="container">
          <a href="#" class="navbar-brand"><strong>前语</strong></a>
          <ul class="nav navbar-nav">
@@ -57,9 +57,22 @@ date: 2015-03-12 18:08
                </ul>
             </li>
          </ul>
+         <a href="" class="btn btn-primary btn-sm navbar-btn navbar-right" style="margin-right: 9px">
+            halo world
+         </a>
+         <div class="profile navbar-right" style="margin-right: 25px">
+            <ul class="nav navbar-nav">
+               <li><a href="">登录</a></li>
+               <li><a href="">注册</a></li>
+            </ul>
+            <p class="navbar-text">
+               halo
+               <a class="navbar-link" style="color: blue">world</a>
+            </p>
+         </div>
       </nav>
    </div>
-   <p class="alert alert-info">
+   <p class="alert alert-info" style="margin-top: 88px">
       在您提供了集群中的任何主机的相关信息（如 IP 地址，主机名和密码）后，gluster peer status 命令
       会通过 SSH 在主机上运行，并显示集群上的主机列表。您需要手工验证每个主机的指纹信息并为它们提供密
       码。当集群中的某个主机已经被关闭，或因一些原因无法访问，您将无法导入这个集群。因为新导入的主机没
