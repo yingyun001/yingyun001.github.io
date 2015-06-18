@@ -6,8 +6,8 @@
 </description>
     <link>http://yingyun001.github.io//</link>
     <atom:link href="http://yingyun001.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 18 Jun 2015 13:24:14 +0800</pubDate>
-    <lastBuildDate>Thu, 18 Jun 2015 13:24:14 +0800</lastBuildDate>
+    <pubDate>Thu, 18 Jun 2015 21:39:32 +0800</pubDate>
+    <lastBuildDate>Thu, 18 Jun 2015 21:39:32 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -36,11 +36,24 @@
             &lt;p class=&quot;alert alert-info&quot;&gt;
             &amp;lt;bandwidth&amp;gt; 标签设置了特定网络的服务质量。只有在拥有 &amp;lt;forward&amp;gt; 标签，且标签中有值为 route，nat 的 mode 属性或者压根没有 mode 属性的网络（例如独立网络）才能够设置 bandwidth。但如果 &amp;lt;forward&amp;gt; 标签中 mode 属性的值是 bridge，passthrough，private 或者 hostdev 的话是不能够设置 bandwidth 的。如果您执意这么做，那么您是不能够定义网络或者创建瞬态网络的。&lt;br/&gt;&lt;br/&gt;
             &amp;lt;bandwidth&amp;gt; 元素只能作为域中的 &amp;lt;interface&amp;gt; 标签中的一个子标签，&amp;lt;network&amp;gt; 标签中的子标签, 或者是 &amp;lt;network&amp;gt; 标签下的 &amp;lt;portgroup&amp;gt; 标签中的子标签。&lt;br/&gt;&lt;br/&gt;
-            作为域的 &amp;lt;interface&amp;gt; 的一个子标签，该带宽只适用于域的一个接口。作为 &amp;lt;network&amp;gt; 标签的一个子标签，这个 bandwidth 指的是经过绑定了该 network 的所有虚拟机上的网卡带宽的聚合，而不是指单独虚拟机的虚拟网卡的带宽。如果域的 &amp;lt;interface&amp;gt; 有 &amp;lt;bandwidth&amp;gt; 子标签，且值比整个网络的总和都大，那么其实 &amp;lt;network&amp;gt; 中的值才会生效。这是因为这两个瓶颈是相互独立的，域的 &amp;lt;interface&amp;gt; 标签下的宽带（bandwidth）适用于接口的开发设备，而 &amp;lt;network&amp;gt; 宽带控制适用于为该网络创建的网桥设备中的一部分接口。&lt;br/&gt;&lt;br/&gt;
-            作为 &amp;lt;network&amp;gt; 标签下portgroup&gt; in a &lt;network&gt;, if a domain&#39;s &lt;interface&gt; has a portgroup attribute in its &lt;source&gt; element and if the &lt;interface&gt; itself has no &lt;bandwidth&gt; element, then the &lt;bandwidth&gt; element of the portgroup will be applied individually to each guest interface defined to be a member of that portgroup. Any &lt;bandwidth&gt; element in the domain&#39;s &lt;interface&gt; definition will override the setting in the portgroup (since 1.0.1).
-
-Incoming and outgoing traffic can be shaped independently. The bandwidth element can have at most one inbound and at most one outbound child element. Leaving either of these children elements out results in no QoS applied for that traffic direction. So, when you want to shape only incoming traffic, use inbound only, and vice versa. Each of these elements have one mandatory attribute - average (or floor as described below). The attributes are as follows, where accepted values for each attribute is an integer number.
+            作为域的 &amp;lt;interface&amp;gt; 的一个子标签，该带宽只适用于域的一个接口。作为 &amp;lt;network&amp;gt; 标签的一个子标签，这个 bandwidth 指的是经过绑定了该 network 的所有虚拟机上的网卡带宽的聚合，而不是指单独虚拟机的虚拟网卡的带宽。如果域的 &amp;lt;interface&amp;gt; 有 &amp;lt;bandwidth&amp;gt; 子标签，且值比整个网络的总和都大，那么其实 &amp;lt;network&amp;gt; 中的值才会生效。这是因为这两个瓶颈是相互独立的，域的 &amp;lt;interface&amp;gt; 标签下的宽带（bandwidth）适用于接口的开发设备，而 &amp;lt;network&amp;gt; 宽带控制适用于为该网络创建的网桥设备中的接口部分。&lt;br/&gt;&lt;br/&gt;
+            作为 &amp;lt;network&amp;gt; 标签下的 &amp;lt;portgroup&amp;gt; 标签中的子标签，如果域的 &amp;lt;interface&amp;gt; 标签下的 &amp;lt;source&amp;gt; 标签中有 portgroup 属性且 &amp;lt;interface&amp;gt; 下没有 &amp;lt;bandwidth&amp;gt; 标签，而后 portgroup 的 &amp;lt;bandwidth&amp;gt; 标签会应用于定义为 portgroup 成员的每个独立的虚拟机中。域的 &amp;lt;interface&amp;gt; 标签下任意的 &amp;lt;bandwidth&amp;gt; 标签将会修写 portgroup 中的设置。&lt;br/&gt;&lt;br/&gt; 
+            Incoming 和 outgoing 流量可以被单独形成。bandwidth 子标签最多只能有一个 inbound 和一个 outbound 子元素。脱离这个inbound 和 outbound 的任何一个都可能导致 QoS 无法正常应用到系统当中。那么，如果您仅想对 incoming 流量进行设置的话，使用 inbound 就可以了，反之亦然。每个元素都有一个元数据属性 - average（或像下面描述的 floor）。下面将会介绍所有属性，每个属性必须是一个整型数字才是合法的。&lt;br/&gt;&lt;br/&gt;
             &lt;/p&gt;
+            &lt;p class=&quot;bg-danger&quot;&gt;
+               &lt;i&gt;平均值&lt;/i&gt;&lt;br/&gt;
+               &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+               指定了虚拟机虚拟网卡的平均比特率。（单位：KB/s）&lt;br/&gt;&lt;br/&gt;
+               &lt;i&gt;峰值&lt;/i&gt;&lt;br/&gt;
+               &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+               这是一个可选的属性，它指定了网桥发送数据的最大速率（单位：KB/s）。需要注意的是限制条件：outbound 元素中的这个属性是被忽略的（因为 Linux 的入口过滤器还不知道它。）&lt;br/&gt;&lt;br/&gt;
+               &lt;i&gt;burst&lt;/i&gt;&lt;br/&gt;
+               &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+               这也是一个可选的属性，它指定了以&lt;i&gt;峰值&lt;/i&gt;这个速度一次 burst 中的传输的最大值（单位：KB）。
+               &lt;i&gt;floor&lt;/i&gt;&lt;br/&gt;
+               &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+               同样，floor 也是一个可选的属性，它仅可以在 inbound 元素中使用。该属性用于保证虚拟机虚拟网卡的最小吞吐量。但是，它需要所有的流量都经过一个点。但是，虚拟网络这也是为什么该属性目前只可作用在虚拟网络中的原因。但是，绑定了虚拟网卡的虚拟网络需要至少一个 inbound QoS 设置（设置 inbound 的时候，average 是必不可少的。）如果您使用了 floor 这个属性的话，您就可以不必设置平均值（average）了。目前，Linux 内核还不允许入口队列规则（ingress qdiscs）有任何子类，所以这也就是为什么 inbound 元素下可以有 floor 属性而 outbound 元素下不能有该属性的原因。
+            &lt;/p&gt; 
          &lt;/div&gt;
       &lt;/div&gt;
    &lt;/div&gt;
