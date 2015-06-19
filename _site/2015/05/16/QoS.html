@@ -102,10 +102,10 @@
                这是一个可选的属性，它指定了网桥发送数据的最大速率（单位：KB/s）。需要注意的是限制条件：outbound 元素中的这个属性是被忽略的（因为 Linux 的入口过滤器还不知道它。）<br/><br/>
                <i>burst</i><br/>
                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-               这也是一个可选的属性，它指定了以<i>峰值</i>这个速度一次 burst 中的传输的最大值（单位：KB）。
+               这也是一个可选的属性，它指定了以<i>峰值</i>这个速度一次 burst 中的传输的最大值（单位：KB）。<br/><br/>
                <i>floor</i><br/>
                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-               同样，floor 也是一个可选的属性，它仅可以在 inbound 元素中使用。该属性用于保证虚拟机虚拟网卡的最小吞吐量。但是，它需要所有的流量都经过一个点。但是，虚拟网络这也是为什么该属性目前只可作用在虚拟网络中的原因。但是，绑定了虚拟网卡的虚拟网络需要至少一个 inbound QoS 设置（设置 inbound 的时候，average 是必不可少的。）如果您使用了 floor 这个属性的话，您就可以不必设置平均值（average）了。目前，Linux 内核还不允许入口队列规则（ingress qdiscs）有任何子类，所以这也就是为什么 inbound 元素下可以有 floor 属性而 outbound 元素下不能有该属性的原因。
+               同样，floor 也是一个可选的属性，它仅可以在 inbound 元素中使用。该属性用于保证虚拟机虚拟网卡的最小吞吐量。但是，它需要所有的流量都经过 QoS 策略起作用的那个点，这也是为什么该属性目前只可作用在虚拟网络上的原因。但是，绑定了该虚拟网卡的虚拟网络需要至少一个 inbound QoS 设置（设置 inbound 的时候，average 是必不可少的。）但是，如果您使用了 floor 这个属性，您就不必再去设置平均值（average）了，而峰值（peak）和 burst 属性仍然需要平均值（average）。目前，Linux 内核还不允许入口队列规则（ingress qdiscs）有任何子类，所以这也就是为什么 inbound 元素下可以有 floor 属性而 outbound 元素下不能有该属性的原因。
             </p> 
          </div>
       </div>
